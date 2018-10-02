@@ -1,7 +1,10 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-
+using MonoGame.Extended;
+using MonoGame.Extended.Tiled;
+using MonoGame.Extended.Tiled.Graphics;
+using MonoGame.Extended.ViewportAdapters;
 namespace Platformer
 {
     /// <summary>
@@ -13,6 +16,10 @@ namespace Platformer
         SpriteBatch spriteBatch;
 
         Player player = new Player(); //Create an instance of our player
+
+        Camera2D camera = null;
+        TiledMap map = null;
+        TiledMapRenderer mapRenderer = null;
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -42,6 +49,17 @@ namespace Platformer
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             player.Load(Content); //call the "load" function in the Player Class
+
+            BoxingViewportAdapter viewportAdapter = new BoxingViewportAdapter(Window,
+                                                                              GraphicsDevice,
+                                                                              graphics.GraphicsDevice.Viewport.Width,
+                                                                              graphics.GraphicsDevice.Viewport.Height);
+
+            camera = new Camera2D(viewportAdapter);
+            camera.Position = new Vector2(0, graphics.GraphicsDevice.Viewport.Height);
+
+            map = Content.Load<TiledMap>("level1");
+            mapRenderer = new TiledMapRenderer(GraphicsDevice);
             // TODO: use this.Content to load your game content here
         }
 
