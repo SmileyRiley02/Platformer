@@ -11,7 +11,7 @@ namespace Platformer
 {
     public class Sprite
     {
-        public Vector2 position = Vector2.Zero;
+        public Vector2 Position = Vector2.Zero;
         public Vector2 offset = Vector2.Zero;
         public Vector2 velocity = Vector2.Zero;
         Texture2D texture;
@@ -30,6 +30,22 @@ namespace Platformer
         public void Load(ContentManager content,string asset)
         {
             texture = content.Load<Texture2D>(asset);
+           
+            width = texture.Bounds.Width;
+            height = texture.Bounds.Height;
+            if (useoffset == true)
+            {
+                offset = new Vector2(leftEdge + width / 2, topEdge + height / 2);
+            }
+
+            UpdateHitBox();
+        }
+        public void UpdateHitBox()
+        {
+            leftEdge = (int)Position.X;
+            rightEdge = (int)Position.X + width;
+            topEdge = (int)Position.Y;
+            bottomEdge = (int)Position.Y + height;
         }
         public void Update(float deltaTime)
         {
@@ -37,7 +53,7 @@ namespace Platformer
         }
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(texture, position = offset, Color.White);
+            spriteBatch.Draw(texture, Position = offset, Color.White);
         }
     }
 }

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/s182216/Documents/GitHub/Platformer/Platformer/Platformer/Platformer/Content/level1.tmx</SourceFile>
-  <SourceTime>2018-10-02T16:54:11.9772868+10:00</SourceTime>
-  <DestFile>C:/Users/s182216/Documents/GitHub/Platformer/Platformer/Platformer/Platformer/Content/bin/Windows/level1.xnb</DestFile>
-  <DestTime>2018-10-03T09:04:27.9551247+10:00</DestTime>
+  <SourceFile>C:/Users/s182216/Documents/GitHub/Platformer/Platformer/Platformer/Content/level1.tmx</SourceFile>
+  <SourceTime>2018-10-03T14:14:24.6482475+10:00</SourceTime>
+  <DestFile>C:/Users/s182216/Documents/GitHub/Platformer/Platformer/Platformer/Content/bin/Windows/level1.xnb</DestFile>
+  <DestTime>2018-10-03T14:28:33.7262475+10:00</DestTime>
   <Importer>TiledMapImporter</Importer>
-  <ImporterTime>2018-05-23T11:26:24+10:00</ImporterTime>
+  <ImporterTime>2018-10-03T14:14:25.1572475+10:00</ImporterTime>
   <Processor>TiledMapProcessor</Processor>
-  <ProcessorTime>2018-05-23T11:26:24+10:00</ProcessorTime>
+  <ProcessorTime>2018-10-03T14:14:25.1572475+10:00</ProcessorTime>
   <Dependencies />
   <BuildAsset />
   <BuildOutput />

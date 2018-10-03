@@ -63,3 +63,7 @@ C:\Users\s182216\Documents\GitHub\Platformer\Platformer\Platformer\Platformer\bi
 C:\Users\s182216\Documents\GitHub\Platformer\Platformer\Platformer\Platformer\bin\Windows\x86\Debug\Newtonsoft.Json.xml
 C:\Users\s182216\Documents\GitHub\Platformer\Platformer\Platformer\Platformer\bin\Windows\x86\Debug\Content\level1.xnb
 C:\Users\s182216\Documents\GitHub\Platformer\Platformer\Platformer\Platformer\bin\Windows\x86\Debug\Content\Tileset.xnb
+C:\Users\s182216\Documents\GitHub\Platformer\Platformer\Platformer\obj\x86\Debug\Platformer.csprojResolveAssemblyReference.cache
+C:\Users\s182216\Documents\GitHub\Platformer\Platformer\Platformer\obj\x86\Debug\Platformer.csproj.CoreCompileInputs.cache
+C:\Users\s182216\Documents\GitHub\Platformer\Platformer\Platformer\obj\x86\Debug\Platformer.exe
+C:\Users\s182216\Documents\GitHub\Platformer\Platformer\Platformer\obj\x86\Debug\Platformer.pdb

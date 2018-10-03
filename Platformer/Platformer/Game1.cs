@@ -110,8 +110,8 @@ namespace Platformer
                 if (collisionLayer.Tiles[loadCount].GlobalIdentifier != 0)
                 {
                     Sprite tileSprite = new Sprite();
-                    tileSprite.position.X = columns * tileHeight;
-                    tileSprite.position.Y = rows * tileHeight;
+                    tileSprite.Position.X = columns * tileHeight;
+                    tileSprite.Position.Y = rows * tileHeight;
 
                 }
             }
@@ -130,7 +130,7 @@ namespace Platformer
             player.Update(deltaTime); //Call the "Update" from our Player class
             // TODO: Add your update logic here
 
-            camera.Position = player.playerSprite.position - new Vector2(graphics.GraphicsDevice.Viewport.Width / 2,
+            camera.Position = player.playerSprite.Position - new Vector2(graphics.GraphicsDevice.Viewport.Width / 2,
                                                                         graphics.GraphicsDevice.Viewport.Height / 2);
 
             base.Update(gameTime);

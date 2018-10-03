@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>C:/Users/s182216/Documents/GitHub/Platformer/Platformer/Platformer/Platformer/Content/File.spritefont</SourceFile>
-  <SourceTime>2018-10-02T14:07:40.6782868+10:00</SourceTime>
-  <DestFile>C:/Users/s182216/Documents/GitHub/Platformer/Platformer/Platformer/Platformer/Content/bin/Windows/File.xnb</DestFile>
-  <DestTime>2018-10-02T15:33:08.1102868+10:00</DestTime>
+  <SourceFile>C:/Users/s182216/Documents/GitHub/Platformer/Platformer/Platformer/Content/File.spritefont</SourceFile>
+  <SourceTime>2018-10-03T14:14:24.6362475+10:00</SourceTime>
+  <DestFile>C:/Users/s182216/Documents/GitHub/Platformer/Platformer/Platformer/Content/bin/Windows/File.xnb</DestFile>
+  <DestTime>2018-10-03T14:28:33.5832475+10:00</DestTime>
   <Importer>FontDescriptionImporter</Importer>
   <ImporterTime>2017-03-02T02:05:36+11:00</ImporterTime>
   <Processor>FontDescriptionProcessor</Processor>

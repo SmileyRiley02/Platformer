@@ -26,7 +26,7 @@ namespace Platformer
             playerSprite.Load(content, "hero");
             game = theGame;
             playerSprite.velocity = Vector2.Zero;
-            playerSprite.position = new Vector2(theGame.GraphicsDevice.Viewport.Width / 2,
+            playerSprite.Position = new Vector2(theGame.GraphicsDevice.Viewport.Width / 2,
                                                          theGame.GraphicsDevice.Viewport.Height - 100);
         }
         public void UpdateInput(float deltaTime)
@@ -49,8 +49,10 @@ namespace Platformer
                 localAcceleration.Y = -nunSpeed;
             }
             playerSprite.velocity = localAcceleration * deltaTime;
-            playerSprite.position += playerSprite.velocity * deltaTime;
+            playerSprite.Position += playerSprite.velocity * deltaTime;
 
+            collision.game = game;
+            playerSprite = collision.Collided();
 }
         public void Update(float deltaTime)
         {
