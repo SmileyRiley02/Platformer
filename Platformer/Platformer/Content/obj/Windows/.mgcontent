@@ -6,7 +6,7 @@
   <SourceFiles>
     <File>C:/Users/s182216/Documents/GitHub/Platformer/Platformer/Platformer/Platformer/Content/File.spritefont</File>
     <File>C:/Users/s182216/Documents/GitHub/Platformer/Platformer/Platformer/Platformer/Content/hero.png</File>
-    <File>C:/Users/s182216/Documents/GitHub/Platformer/Platformer/Platformer/Platformer/Content/Platformerlvl1.tmx</File>
-    <File>C:/Users/s182216/Documents/GitHub/Platformer/Platformer/Platformer/Platformer/Content/Tileset (1).png</File>
+    <File>C:/Users/s182216/Documents/GitHub/Platformer/Platformer/Platformer/Platformer/Content/level1.tmx</File>
+    <File>C:/Users/s182216/Documents/GitHub/Platformer/Platformer/Platformer/Platformer/Content/Tileset.png</File>
   </SourceFiles>
 </SourceFileCollection>

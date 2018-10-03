@@ -1,10 +1,12 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Content;
 using MonoGame.Extended;
 using MonoGame.Extended.Tiled;
 using MonoGame.Extended.Tiled.Graphics;
 using MonoGame.Extended.ViewportAdapters;
+using System.Collections;
 namespace Platformer
 {
     /// <summary>
@@ -20,10 +22,23 @@ namespace Platformer
         Camera2D camera = null;
         TiledMap map = null;
         TiledMapRenderer mapRenderer = null;
+        TiledMapTileLayer collisionLayer;
+        public ArrayList allCollisionFiles = new ArrayList();
+        public Sprite[,] levelGrid;
+        public int tileHeight;
+        public int levelTileHeight = 0;
+        public int levelTileWidth = 0;
+
+
+
+        public Rectangle myMap;
+
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            graphics.PreferredBackBufferHeight = 900;
+            graphics.PreferredBackBufferWidth = 1600;
         }
 
         /// <summary>
@@ -35,7 +50,10 @@ namespace Platformer
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-
+            myMap.X = 0;
+            myMap.Y = 0;
+            myMap.Width = 1600;
+            myMap.Height = 1600;
             base.Initialize();
         }
 
@@ -48,7 +66,7 @@ namespace Platformer
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            player.Load(Content); //call the "load" function in the Player Class
+            player.Load(Content, this); //call the "load" function in the Player Class
 
             BoxingViewportAdapter viewportAdapter = new BoxingViewportAdapter(Window,
                                                                               GraphicsDevice,
@@ -71,7 +89,33 @@ namespace Platformer
         {
             // TODO: Unload any non ContentManager content here
         }
+        public void SetupTiles()
+        {
+            tileHeight = map.TileHeight;
+            levelTileHeight = map.Height;
+            levelTileWidth = map.Width;
+            levelGrid = new Sprite[levelTileWidth, levelTileHeight];
+            foreach(TiledMapTileLayer layer in map.TileLayers)
+            {
+                if (layer.Name == "Collision")
+                {
+                    collisionLayer = layer;
+                }
+            }
+            int columns = 0;
+            int rows = 0;
+            int loadCount = 0;
+            while (loadCount<collisionLayer.Tiles.Count)
+            {
+                if (collisionLayer.Tiles[loadCount].GlobalIdentifier != 0)
+                {
+                    Sprite tileSprite = new Sprite();
+                    tileSprite.position.X = columns * tileHeight;
+                    tileSprite.position.Y = rows * tileHeight;
 
+                }
+            }
+        }
         /// <summary>
         /// Allows the game to run logic such as updating the world,
         /// checking for collisions, gathering input, and playing audio.
@@ -86,6 +130,9 @@ namespace Platformer
             player.Update(deltaTime); //Call the "Update" from our Player class
             // TODO: Add your update logic here
 
+            camera.Position = player.playerSprite.position - new Vector2(graphics.GraphicsDevice.Viewport.Width / 2,
+                                                                        graphics.GraphicsDevice.Viewport.Height / 2);
+
             base.Update(gameTime);
         }
 
@@ -97,26 +144,15 @@ namespace Platformer
         {
             GraphicsDevice.Clear(Color.Gray);
 
-            // TODO: Add your drawing code here
-            spriteBatch.Begin();
+            var viewMatrix = camera.GetViewMatrix();
+            var projecttimeMatrix = Matrix.CreateOrthographicOffCenter(0,
+                                                                        GraphicsDevice.Viewport.Width,
+                                                                        GraphicsDevice.Viewport.Height,
+                                                                        0,0.0f, -1.0f);
 
+            spriteBatch.Begin(transformMatrix: viewMatrix);
+            mapRenderer.Draw(map, ref viewMatrix, ref viewMatrix);
             player.Draw(spriteBatch);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             spriteBatch.End();
 
 
